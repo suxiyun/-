@@ -1,0 +1,27 @@
+// 生成随机的小写字母
+function generateRandomLetter() {
+    var letters = 'abcdefghijklmnopqrstuvwxyz';
+    return letters.charAt(Math.floor(Math.random() * letters.length));
+}
+
+// 生成随机的五位数二级域名
+function generateRandomSubdomain() {
+    var subdomain = '';
+    for (var i = 0; i < 5; i++) {
+        subdomain += generateRandomLetter();
+    }
+    return subdomain;
+}
+
+// 创建配置对象
+var config = {
+    protocol: 'https',
+    host: generateRandomSubdomain() + '.cccc.gg',
+    path: '/'
+};
+
+// 生成完整的URL
+var fullURL = config.protocol + '://' + config.host + config.path;
+
+// 输出生成的URL
+console.log('Generated URL:', fullURL);
